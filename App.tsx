@@ -33,12 +33,14 @@ export default function App() {
       <Image source={LogoPicture} style={{ width: 190, height: 60, marginTop: 50 }} />
       <TextInput onChangeText={(value) => setEmail(value)} style={{ borderRadius: 5, paddingLeft: 10, borderColor: "#DBDBDB", borderWidth: 1, backgroundColor: "#FAFAFA", height: 45, width: "80%", marginTop: 20 }} placeholder="E-mail" />
       <TextInput style={{ borderRadius: 5, paddingLeft: 10, borderColor: "#DBDBDB", borderWidth: 1, backgroundColor: "#FAFAFA", height: 45, width: "80%", marginTop: 10 }} onChangeText={(value) => setPassword(value)} placeholder="Password" secureTextEntry={true} />
-      <TouchableOpacity onPress={() => setLoading(!loading)} style={{ ...styles.buttonStyle, backgroundColor: ActiveButton ? "#0095F6" : "#B2DFFC" }}>
+      <TouchableOpacity onPress={() => ActiveButton && setLoading(!loading)} style={{ ...styles.buttonStyle, backgroundColor: ActiveButton ? "#0095F6" : "#B2DFFC" }}>
         <Text style={{ color: "white" }}>Log in</Text>
       </TouchableOpacity>
       <Text style={{ color: "grey", justifyContent: "center", fontSize: 12, marginTop: 15 }}>Forgot your login details? <Text style={{ color: "#00376B", fontWeight: "bold" }}>Get help logging in.</Text></Text>
       <View style={{ backgroundColor: "#E0E0E0", width: "80%", height: 1.5, marginTop: 20 }}></View>
-      <Text style={{ justifyContent: "center", color: "#1EA1F7", fontWeight: "bold", marginTop: 30 }}><Image source={IconFacebook} style={{ height: 30, width: 30 }} /> Log in with Facebook</Text>
+      <TouchableOpacity onPress={() => alert("Loggin in with facebook ...")}>
+        <Text style={{ justifyContent: "center", color: "#1EA1F7", fontWeight: "bold", marginTop: 30 }}><Image source={IconFacebook} style={{ height: 20, width: 20 }} />  Log in with Facebook</Text>
+      </TouchableOpacity>
     </View>
   );
 }
